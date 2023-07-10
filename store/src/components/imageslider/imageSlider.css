@@ -1,0 +1,109 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 800px;
+  /* width: 100%; */
+  /* max-width: 800px; */
+  position: relative;
+}
+
+.carousel-wrapper {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-card {
+  display: flex;
+  flex: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition: 0.5s ease-in-out;
+}
+
+.carousel-card-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: visible;
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 40px 30px;
+}
+
+.card-title {
+  color: white;
+  font-size: 4rem;
+  padding-left: 20rem;
+  padding-top: 10rem;
+}
+
+.carousel-arrow-left,
+.carousel-arrow-right {
+  position: absolute;
+  font-size: 3rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  /* background-color: rgba(255, 255, 255, 0.178); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding-bottom: 4px;
+  /* padding-bottom: 7px; */
+}
+
+.carousel-arrow-left {
+  background-color: rgba(255, 255, 255, 0.374);
+  color: rgb(255, 255, 255);
+  left: 4rem;
+}
+
+.carousel-arrow-right {
+  background-color: rgba(255, 255, 255, 0.374);
+  color: rgb(255, 255, 255);
+  right: 4rem;
+}
+
+.carousel-pagination {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.pagination-dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.pagination-dot:hover {
+  transform: scale(1.2);
+}
+
+.pagination-dot-active {
+  background-color: #f1356d;
+}
