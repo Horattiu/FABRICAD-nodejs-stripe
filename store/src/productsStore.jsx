@@ -5,7 +5,7 @@
 const productsArray = [
   {
     id: "price_1NQZAYKeASpJmZ80DtPpaXwe",
-    title: "Coffee table",
+    title: "Coffee",
     price: 20.0,
   },
   {

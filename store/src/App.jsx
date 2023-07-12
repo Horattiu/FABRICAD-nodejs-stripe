@@ -10,6 +10,7 @@ import { CartProvider } from "./CartContext";
 import ImageSlider from "./components/imageslider/ImageSlider";
 import { images } from "./components/imageslider/SliderData";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery/Gallery";
 
 // localhost:3000 -> Home
 // localhost:3000/success -> Success
@@ -17,18 +18,19 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <CartProvider>
-      <Container>
-        <NavbarComponent></NavbarComponent>
-        <BrowserRouter>
-          <ImageSlider images={images} />
-          <Routes>
-            <Route index element={<Store />} />
-            <Route path="success" element={<Success />} />
-            <Route path="cancel" element={<Cancel />} />
-          </Routes>
-        </BrowserRouter>
-        <Footer />
-      </Container>
+      {/* <Container> */}
+      <NavbarComponent></NavbarComponent>
+      <BrowserRouter>
+        <ImageSlider images={images} />
+        <Routes>
+          <Route index element={<Store />} />
+          <Route path="success" element={<Success />} />
+          <Route path="cancel" element={<Cancel />} />
+        </Routes>
+      </BrowserRouter>
+      <Gallery />
+      <Footer />
+      {/* </Container> */}
     </CartProvider>
   );
 }

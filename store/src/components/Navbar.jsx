@@ -2,6 +2,7 @@ import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { CartContext } from "../CartContext";
 import CartProduct from "./CartProduct";
+import "./navbar.css";
 
 function NavbarComponent() {
   const cart = useContext(CartContext);
@@ -37,6 +38,7 @@ function NavbarComponent() {
       <Navbar expand="sm">
         <Navbar.Brand href="/">Fabricad</Navbar.Brand>
         <Navbar.Toggle />
+
         <Navbar.Collapse className="justify-content-end">
           <Button onClick={handleShow}>cart ({productsCount}) items</Button>
         </Navbar.Collapse>
