@@ -1,0 +1,56 @@
+.image-stack-container {
+  position: relative;
+  display: inline-block;
+  max-width: 36rem;
+  min-height: 20rem;
+
+  transition: opacity 0.5s ease-in-out;
+  animation: fade 5s linear infinite;
+  overflow: hidden;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-button,
+.next-button {
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer; */
+}
+
+.prev-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.781);
+}
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.781);
+}
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+/* You can further style the buttons as needed */

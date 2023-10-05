@@ -1,0 +1,242 @@
+.navbar {
+  background-color: rgb(245, 245, 245);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding-left: 6rem;
+  padding-right: 6rem;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.navbar-container {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 0;
+  justify-content: center;
+  justify-items: center;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(250, 78, 78);
+  cursor: pointer;
+  text-decoration: none;
+}
+.cart-icon {
+  vertical-align: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.work {
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  color: #212529;
+  cursor: pointer;
+  align-self: center;
+  text-decoration: none;
+}
+.work:hover {
+  color: #535bf2;
+}
+
+.about {
+  color: black;
+  font-weight: 600;
+  color: #212529;
+  cursor: pointer;
+  align-self: center;
+}
+
+.about:hover {
+  color: #535bf2;
+}
+.navbar-button {
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  cursor: pointer;
+  /* padding: 5px 10px; */
+  background-color: #a4b2b3d2;
+  border: none;
+  border-radius: 5px;
+  color: #212529;
+  font-size: 1rem;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 54rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-close {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.modal-close:hover {
+  color: #ff0000;
+}
+
+.modal-body {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.modal-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.total {
+  padding-bottom: 2rem;
+}
+.modal-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-product {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-product-name {
+  font-weight: bold;
+}
+
+.cart-product-quantity {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.cart-product-remove {
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff0000;
+  margin-left: 10px;
+}
+
+.cart-product-remove:hover {
+  color: #c10000;
+}
+
+.mobile-menu-icon {
+  font-size: 2rem;
+  color: #212529;
+  cursor: pointer;
+  align-self: center;
+  padding: 0 1rem;
+}
+.menu {
+  display: none;
+  color: red;
+  cursor: pointer;
+  color: #212529;
+  font-size: 1.6rem;
+}
+.empty {
+  width: 8rem;
+}
+
+/* //////////////////// mobile //////////////////// */
+
+/* @media (max-width: 768px) {
+    .navbar-container {
+      display: none;
+    
+    }
+    .nav-links-mobile {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      backdrop-filter: blur(8px); 
+      width: 100%;
+      padding: 20px;
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.9
+      ); 
+      border-radius: 10px;
+    }
+    .menu {
+      display: block;
+
+    }
+  } */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    display: none;
+  }
+
+  .nav-links-mobile {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0; /* Set right to 0 to occupy full width */
+    bottom: 0; /* Set bottom to 0 to occupy full height */
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    backdrop-filter: blur(6px); /* Adjust the blur amount as needed */
+    width: 100%;
+    height: 100%; /* Set height to 100% to occupy full height */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+  }
+
+  .menu {
+    display: block;
+  }
+}

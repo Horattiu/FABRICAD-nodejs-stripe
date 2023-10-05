@@ -1,0 +1,26 @@
+.remove-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.product-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  margin: 2rem;
+}
+
+.quantity-container {
+  width: 6rem;
+  text-align: center;
+}
+.title-container {
+  width: 10rem;
+}
+
+

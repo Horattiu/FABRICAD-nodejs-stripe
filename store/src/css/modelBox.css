@@ -1,0 +1,25 @@
+/* 
+.model-container {
+  width: 34rem;
+  height: 30rem;
+}
+
+.model-box {
+  max-width: 40rem;
+  background-color: red;
+  margin-left: 28rem;
+} */
+
+/* Define styles for the responsive model container */
+.model-container {
+  width: 100%; /* Initially, set width to 100% to fill its parent */
+  max-width: 40rem; /* Define a maximum width for the model container */
+  height: 30rem; /* Set a fixed height for the model container */
+  margin: 0 auto; /* Center the container horizontally */
+  margin-bottom: 10rem;
+}
+
+/* Additional styles for the model box if needed */
+.model-box {
+  /* background-color: red; */
+}

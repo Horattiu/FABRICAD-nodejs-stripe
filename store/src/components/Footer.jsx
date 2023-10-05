@@ -1,10 +1,10 @@
-import "./footer.css";
+import "../css/footer.css";
 
 const Footer = () => (
   <div className="background-box">
-    <footer class="footer-container">
-      <div class="footer-box">
-        <h1 class="logo-footer">fabricad</h1>
+    <footer className="footer-container">
+      <div className="footer-box">
+        <h1 className="logo-footer">fabricad</h1>
         <ul>
           <li className="facebook-logo">
             <ion-icon
@@ -13,14 +13,14 @@ const Footer = () => (
               name="logo-facebook"
             ></ion-icon>
           </li>
-          <li>
+          <li className="instagram-logo">
             <ion-icon name="logo-instagram"></ion-icon>
           </li>
         </ul>
         <p>copyright@2022 by fabricadserv</p>
       </div>
-      <div class="footer-box">
-        <h1>About us</h1>
+      <div className="footer-box">
+        <h1 className="logo-footer">About us</h1>
         <p>
           Atelierul se afla in localitatea, <br />
           Barai,strada ..nr.. jud.
@@ -31,8 +31,8 @@ const Footer = () => (
         </p>
       </div>
 
-      <div class="footer-box ">
-        <h1>contact</h1>
+      <div className="footer-box ">
+        <h1 className="logo-footer">contact</h1>
         <p>
           098-093-933
           <br />

@@ -1,0 +1,54 @@
+/* .gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.image-gallery {
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 14rem;
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  padding-bottom: ;
+  margin-bottom: 6rem;
+}
+
+/* .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 60rem;
+  gap: 1rem;
+  margin: 0 auto;
+} */
+
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 14rem;
+  font-size: 1.2rem;
+}
+
+.icon {
+  padding-top: 1rem;
+  width: 5rem;
+  color: black;
+}
+
+.icon2 {
+  /* Change the hue to 90 degrees (adjust the value to change the color) */
+}
+/* ///////////////////////////// */
+/* MEDIA Q */
+/* //////////////////////////// */
+
+/* Media query for smaller desktops (2 columns) */
+@media (max-width: 48rem) {
+}
+
+/* Media query for mobiles (1 column) */
+@media (max-width: 24rem) {
+}

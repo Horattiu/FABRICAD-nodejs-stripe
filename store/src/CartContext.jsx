@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { productsArray, getProductData } from "./productsStore";
+import { createContext, useState, useMemo } from "react";
+import { productsArray, getProductData } from "./ProductsStore";
 
 export const CartContext = createContext({
   items: [],
