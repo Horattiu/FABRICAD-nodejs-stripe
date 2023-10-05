@@ -54,12 +54,13 @@
 
 // app.listen(4000, () => console.log("Listening on port 4000!"));
 
-
 const express = require("express");
 var cors = require("cors");
-const stripe = require("stripe")(
-  "sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+// const stripe = require("stripe")(
+//   "sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x"
+// );
 
 const app = express();
 app.use(cors());
@@ -84,15 +85,14 @@ app.post("/checkout", async (req, res) => {
     });
   });
 
-  // Specificați colectarea informațiilor de adresă în sesiunea de checkout
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
     success_url: "http://localhost:4000/success",
     cancel_url: "http://localhost:4000/cancel",
-    // Adăugați aici colectarea informațiilor de adresă
+
     shipping_address_collection: {
-      allowed_countries: ['US', 'CA', 'GB', 'DE'], // Modificați lista țărilor permise
+      allowed_countries: ["US", "CA", "GB", "DE", "RO"],
     },
   });
 
