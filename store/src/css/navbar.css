@@ -214,6 +214,10 @@ ul {
   } */
 
 @media (max-width: 768px) {
+  .navbar {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
   .navbar-container {
     display: none;
   }

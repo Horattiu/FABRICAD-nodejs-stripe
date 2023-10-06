@@ -1,11 +1,10 @@
 import React from "react";
 // import "../css/imageGallery.css";
-import img1 from "../components/Gallery/img1.jpg";
-import img2 from "../components/Gallery/img2.jpg";
-import img3 from "../components/Gallery/img3.jpg";
-import img4 from "../components/Gallery/img4.jpg";
-import img5 from "../components/Gallery/img5.jpg";
-import img6 from "../components/Gallery/img6.jpg";
+import img1 from "/Gallery/pic1.jpg";
+import img2 from "/Gallery/pic2.jpg";
+import img3 from "/Gallery/pic3.jpg";
+import img4 from "/Gallery/pic4.jpg";
+
 import Navbar from "./Navbar";
 
 const images = [
@@ -13,8 +12,6 @@ const images = [
   { src: img2, alt: "Image 2" },
   { src: img3, alt: "Image 3" },
   { src: img4, alt: "Image 4" },
-  { src: img5, alt: "Image 5" },
-  { src: img6, alt: "Image 6" },
 ];
 
 function Work() {

@@ -76,8 +76,12 @@
   }
 
   .footer-box {
-    text-align: center;
     padding-top: 2rem;
+    align-items: center;
+  }
+
+  .footer-box p {
+    text-align: center;
   }
 
   .footer-box h1 {
@@ -98,13 +102,5 @@
   }
 }
 
-/* Tablet and larger screens */
-@media (min-width: 577px) and (max-width: 992px) {
-  .footer-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet screens */
-  }
-
-  .footer-box {
-    text-align: left;
-  }
+@media (max-width: 30rem) {
 }

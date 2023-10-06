@@ -53,4 +53,11 @@
   right: 10px;
 }
 
-/* You can further style the buttons as needed */
+@media (max-width: 30rem) {
+  .image-stack-container {
+    position: relative;
+    display: inline-block;
+    max-width: 20rem;
+    min-height: 20rem;
+  }
+}

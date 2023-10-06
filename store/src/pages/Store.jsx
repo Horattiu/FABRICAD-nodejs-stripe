@@ -69,7 +69,6 @@ import AOS from "aos";
 
 import { productsArray } from "../ProductsStore";
 
-
 // Store.jsx
 function Store() {
   useEffect(() => {
@@ -80,7 +79,9 @@ function Store() {
 
   return (
     <>
-      <h1 className="products-title">Products</h1>
+      <h1 id="title" className="products-title">
+        Products
+      </h1>
       <div data-aos="fade-up" className="store-container">
         {productsArray.map((product, idx) => (
           <div className="cardd" key={idx}>

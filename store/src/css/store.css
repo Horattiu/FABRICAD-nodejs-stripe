@@ -1,18 +1,17 @@
 .store-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
-  /* gap: 1rem;  */
   text-align: center;
   padding: 2rem;
   max-width: 70rem;
   padding-top: 0;
 }
 
-/* h1 {
-  font-size: 2rem;
-  text-align: center;
-} */
+.hr {
+  color: rgb(224, 151, 151);
+  height: 0.2px;
+}
 
 .con {
   /* display: flex;

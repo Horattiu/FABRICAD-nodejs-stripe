@@ -43,11 +43,7 @@ const productsArray = [
     model: "/model3/scene.gltf",
     texturePath: "",
     size: "100 x 400",
-    moreImages: [
-      "/Gallery/pic2.jpg",
-      "/Gallery/pic4.jpg",
-      // Add more image URLs here
-    ],
+    moreImages: ["/Gallery/pic2.jpg", "/Gallery/pic4.jpg"],
   },
   {
     id: "price_1NxTG6KeASpJmZ80Kb7u8uOP",
@@ -57,11 +53,18 @@ const productsArray = [
     model: "/model4/scene.gltf",
     texturePath: "",
     size: "100 x 400",
-    moreImages: [
-      "/Gallery/pic2.jpg",
-      "/Gallery/pic4.jpg",
-      // Add more image URLs here
-    ],
+    moreImages: ["/Gallery/pic2.jpg", "/Gallery/pic4.jpg"],
+  },
+
+  {
+    id: "price_1NyKUHKeASpJmZ80MyOVo46c",
+    title: "chair 3",
+    price: 200,
+    imageUrl: "/Gallery/pic1.jpg",
+    model: "/model5/scene.gltf",
+    texturePath: "",
+    size: "200 x 400",
+    moreImages: ["/Gallery/pic2.jpg", "/Gallery/pic4.jpg"],
   },
 ];
 
