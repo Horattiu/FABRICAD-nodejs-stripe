@@ -148,6 +148,6 @@ app.post("/checkout", async (req, res) => {
   );
 });
 
-const PORT = process.env.PORT || 4000; // Use the PORT environment variable if available, or use 4000 as a default
+const PORT = process.env.PORT || 4000; 
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
