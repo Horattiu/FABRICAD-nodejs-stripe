@@ -6,7 +6,6 @@
 // const express = require("express");
 // var cors = require("cors");
 
-
 // const app = express();
 // app.use(cors());
 // app.use(express.static("public"));
@@ -52,16 +51,65 @@
 
 // app.listen(4000, () => console.log("Listening on port 4000!"));
 
+// const express = require("express");
+// var cors = require("cors");
+// require("dotenv").config();
+// // const stripe = require("stripe")(
+// //   "sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x"
+// // );
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+// const app = express();
+// app.use(cors());
+// app.use(express.static("public"));
+// app.use(express.json());
+
+// app.get("/success", (req, res) => {
+//   res.send("Payment Successful!");
+// });
+
+// app.get("/cancel", (req, res) => {
+//   res.send("Payment Cancelled!");
+// });
+
+// app.post("/checkout", async (req, res) => {
+//   const items = req.body.items;
+//   let lineItems = [];
+//   items.forEach((item) => {
+//     lineItems.push({
+//       price: item.id,
+//       quantity: item.quantity,
+//     });
+//   });
+
+//   const session = await stripe.checkout.sessions.create({
+//     line_items: lineItems,
+//     mode: "payment",
+//     success_url: "http://localhost:4000/success",
+//     cancel_url: "http://localhost:4000/cancel",
+
+//     shipping_address_collection: {
+//       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
+//     },
+//   });
+
+//   res.send(
+//     JSON.stringify({
+//       url: session.url,
+//     })
+//   );
+// });
+
+// app.listen(4000, () => console.log("Listening on port 4000!"));
+
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
 require("dotenv").config();
-// const stripe = require("stripe")(
-//   "sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x"
-// );
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(cors());
+
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -86,9 +134,8 @@ app.post("/checkout", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url: "http://localhost:4000/success",
-    cancel_url: "http://localhost:4000/cancel",
-
+    success_url: "https://fabricadserv.netlify.app/success", // Replace with your actual success URL
+    cancel_url: "https://fabricadserv.netlify.app/cancel", // Replace with your actual cancel URL
     shipping_address_collection: {
       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
     },
@@ -101,4 +148,6 @@ app.post("/checkout", async (req, res) => {
   );
 });
 
-app.listen(4000, () => console.log("Listening on port 4000!"));
+const PORT = process.env.PORT || 4000; // Use the PORT environment variable if available, or use 4000 as a default
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
