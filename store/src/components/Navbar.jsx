@@ -16,7 +16,7 @@ function NavbarComponent() {
   const handleShow = () => setShow(true);
 
   const checkout = async () => {
-    await fetch("http://fabricadserv.netlify.app/checkout", {
+    await fetch("https://fabricadserv.netlify.app/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
