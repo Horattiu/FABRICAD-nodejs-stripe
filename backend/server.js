@@ -102,13 +102,69 @@
 
 // app.listen(4000, () => console.log("Listening on port 4000!"));
 
+// const express = require("express");
+// const cors = require("cors");
+// require("dotenv").config();
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+// const app = express();
+// app.use(cors());
+
+// app.use(express.static("public"));
+// app.use(express.json());
+
+// app.get("/success", (req, res) => {
+//   res.send("Payment Successful!");
+// });
+
+// app.get("/cancel", (req, res) => {
+//   res.send("Payment Cancelled!");
+// });
+
+// app.post("/checkout", async (req, res) => {
+//   const items = req.body.items;
+//   let lineItems = [];
+//   items.forEach((item) => {
+//     lineItems.push({
+//       price: item.id,
+//       quantity: item.quantity,
+//     });
+//   });
+
+//   const session = await stripe.checkout.sessions.create({
+//     line_items: lineItems,
+//     mode: "payment",
+//     success_url: "https://fabricadserv.netlify.app/success",
+//     cancel_url: "https://fabricadserv.netlify.app/cancel",
+//     shipping_address_collection: {
+//       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
+//     },
+//   });
+
+//   res.send(
+//     JSON.stringify({
+//       url: session.url,
+//     })
+//   );
+// });
+
+// const PORT = process.env.PORT || 4000;
+
+// app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
+
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
-app.use(cors());
+
+// Configure CORS to allow requests from your Netlify frontend
+const corsOptions = {
+  origin: "https://fabricadserv.netlify.app", // Replace with your Netlify frontend URL
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -134,8 +190,8 @@ app.post("/checkout", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://fabricadserv.netlify.app/success", // Replace with your actual success URL
-    cancel_url: "https://fabricadserv.netlify.app/cancel", // Replace with your actual cancel URL
+    success_url: "https://fabricadserv.netlify.app/success",
+    cancel_url: "https://fabricadserv.netlify.app/cancel",
     shipping_address_collection: {
       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
     },
@@ -148,6 +204,6 @@ app.post("/checkout", async (req, res) => {
   );
 });
 
-const PORT = process.env.PORT || 4000; 
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
