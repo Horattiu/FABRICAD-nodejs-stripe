@@ -312,8 +312,7 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
     // Successful authentication, redirect to your app's success page
-
-    res.redirect("https://fabricadserv.netlify.app/user");
+    res.redirect("https://fabricadserv.onrender.com/user");
   }
 );
 
@@ -321,7 +320,7 @@ app.get("/user", (req, res) => {
   const user = req.session.user;
 
   if (user) {
-    // res.redirect("https://fabricadserv.netlify.app");
+    res.redirect("https://fabricadserv.netlify.app");
 
     res.json(user);
   } else {
