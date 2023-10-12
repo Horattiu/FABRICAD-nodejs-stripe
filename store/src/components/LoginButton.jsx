@@ -97,7 +97,7 @@ function LoginButton() {
         </div>
       ) : (
         <div>
-          <button onClick={handleLogin}>Login with Google</button>
+          <button onClick={handleLogin}>Login with Googlee</button>
         </div>
       )}
     </div>
