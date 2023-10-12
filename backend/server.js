@@ -313,15 +313,16 @@ app.get(
   (req, res) => {
     // Successful authentication, redirect to your app's success page
 
-    res.redirect("https://fabricadserv.netlify.app");
+    res.redirect("https://fabricadserv.netlify.app/user");
   }
 );
 
 app.get("/user", (req, res) => {
-  // Retrieve user information from the session
   const user = req.session.user;
 
   if (user) {
+    // res.redirect("https://fabricadserv.netlify.app");
+
     res.json(user);
   } else {
     res.status(401).json({ message: "Unauthorized" });
@@ -333,7 +334,7 @@ app.get("/logout", (req, res) => {
     if (err) {
       console.error("Error clearing session:", err);
     }
-    res.redirect("/"); // Redirect to a log-out page or home page
+    res.redirect("/");
   });
 });
 
