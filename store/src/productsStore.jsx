@@ -63,7 +63,7 @@ const productsArray = [
     imageUrl: "/Gallery/pic1.jpg",
     model: "/model5/scene.gltf",
     texturePath: "",
-    size: "200 x 400",
+    size: "100 x 400",
     moreImages: ["/Gallery/pic2.jpg", "/Gallery/pic4.jpg"],
   },
 ];

@@ -62,7 +62,6 @@ ul {
 .navbar-button {
   padding: 0.4rem 1rem 0.4rem 1rem;
   cursor: pointer;
-  /* padding: 5px 10px; */
   background-color: #a4b2b3d2;
   border: none;
   border-radius: 5px;
@@ -116,7 +115,7 @@ ul {
 }
 
 .modal-body {
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
 }
 
@@ -163,54 +162,43 @@ ul {
   color: #c10000;
 }
 
-.mobile-menu-icon {
-  font-size: 2rem;
-  color: #212529;
-  cursor: pointer;
-  align-self: center;
-  padding: 0 1rem;
+.menu-icon {
+  position: absolute;
+  right: 2rem;
 }
 .menu {
   display: none;
-  color: red;
   cursor: pointer;
   color: #212529;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+  border: none;
+  background-color: rgba(245, 222, 179, 0);
+}
+
+.menu-close {
+  border: none;
+  background-color: rgba(245, 222, 179, 0);
+  font-size: 4rem;
 }
 .empty {
   width: 8rem;
 }
+.hrrr {
+  margin: 1rem;
+  background-color: #8f8f8f56;
+}
 
-/* //////////////////// mobile //////////////////// */
+/* .close-button {
+    display: none;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    font-size: 3rem;
+    color: #7a7a7a;
+  } */
 
-/* @media (max-width: 768px) {
-    .navbar-container {
-      display: none;
-    
-    }
-    .nav-links-mobile {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
-      backdrop-filter: blur(8px); 
-      width: 100%;
-      padding: 20px;
-      background-color: rgba(
-        255,
-        255,
-        255,
-        0.9
-      ); 
-      border-radius: 10px;
-    }
-    .menu {
-      display: block;
-
-    }
+/* .close-button.visible {
+    display: inline-block;
   } */
 
 @media (max-width: 768px) {
@@ -226,21 +214,32 @@ ul {
     position: fixed;
     top: 4rem;
     left: 0;
-    right: 0; /* Set right to 0 to occupy full width */
-    bottom: 0; /* Set bottom to 0 to occupy full height */
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    backdrop-filter: blur(6px); /* Adjust the blur amount as needed */
+    backdrop-filter: blur(20px);
     width: 100%;
-    height: 100%; /* Set height to 100% to occupy full height */
+    height: 100%;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    justify-content: center; /* Vertically center content */
-    align-items: center; /* Horizontally center content */
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
   }
 
   .menu {
     display: block;
+  }
+
+  .total {
+    padding-bottom: 0.8rem;
+  }
+  .hr {
+    margin: 0.6rem;
+  }
+
+  .items {
+    padding-bottom: 0.4rem;
   }
 }

@@ -12,14 +12,17 @@
 
 /* Define styles for the responsive model container */
 .model-container {
+  cursor: pointer;
+  background-color: rgb(240, 232, 221);
   width: 100%; /* Initially, set width to 100% to fill its parent */
-  max-width: 40rem; /* Define a maximum width for the model container */
+  max-width: 37rem; /* Define a maximum width for the model container */
   height: 30rem; /* Set a fixed height for the model container */
-  margin: 0 auto; /* Center the container horizontally */
+  /* margin: 0 auto; */
   margin-bottom: 10rem;
 }
 
 /* Additional styles for the model box if needed */
 .model-box {
+  padding-left: 9rem;
   /* background-color: red; */
 }

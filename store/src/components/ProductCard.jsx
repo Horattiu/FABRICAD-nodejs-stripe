@@ -6,7 +6,6 @@ import { CartContext } from "../CartContext";
 import "../css/productCard.css"; // Import your custom CSS file for styling
 import { Canvas, extend, useThree, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; // Import GLTFLoader
-import Model from "./Model";
 import ThreeModel from "./ThreeModel";
 import ProductDetails from "./ProductDetails";
 import AddToCartButton from "./AddToCartButton";

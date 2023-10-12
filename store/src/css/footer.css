@@ -1,6 +1,5 @@
 .see-more {
   text-align: center;
-  /* padding: 8rem; */
   font-size: 1.8rem;
 }
 
@@ -12,17 +11,14 @@
 }
 
 .footer-container {
-  /* background-color: rgb(247, 94, 94); */
   color: #ffff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* place-items: center; */
-  /* max-width: 70rem; */
+
   max-width: 64rem;
   margin: 0 auto;
   justify-items: center;
   align-items: baseline;
-  /* align-items: start; */
 }
 
 .logo-footer {
@@ -31,6 +27,7 @@
 }
 
 .footer-box {
+  width: 14rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,12 +47,9 @@
 
 .footer-box ul {
   display: flex;
-  /* margin-left: -2rem; */
 }
 
 .footer-container ul {
-  /* margin-left: -2.6rem; */
-  /* display: flex; */
   cursor: pointer;
   list-style: none;
   font-size: 3rem;
@@ -65,9 +59,8 @@
 /* Mobile and smaller screens */
 @media (max-width: 576px) {
   .footer-container {
-    grid-template-columns: 1fr; /* 1 column for mobile screens */
+    grid-template-columns: 1fr; 
     justify-content: center;
-    /* text-align: center; */
   }
 
   .background-box {
@@ -76,15 +69,21 @@
   }
 
   .footer-box {
+    max-width: 14rem;
     padding-top: 2rem;
     align-items: center;
   }
+  .footer-box ul {
+    display: flex;
+    align-self: baseline;
+  }
 
   .footer-box p {
-    text-align: center;
+    align-self: baseline;
   }
 
   .footer-box h1 {
+    align-self: baseline;
     font-size: 1.8rem;
   }
 
@@ -100,7 +99,4 @@
   .instagram-logo {
     font-size: 1.6rem;
   }
-}
-
-@media (max-width: 30rem) {
 }

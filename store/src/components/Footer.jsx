@@ -19,15 +19,13 @@ const Footer = () => (
         </ul>
         <p>copyright@2022 by fabricadserv</p>
       </div>
+
       <div className="footer-box">
         <h1 className="logo-footer">About us</h1>
         <p>
-          Atelierul se afla in localitatea, <br />
-          Barai,strada ..nr.. jud.
-          <br /> Cluj Napoca. fondat in 2018 <br />
-          productie de serie <br />
-          mobila la comanda
-          <br /> prelucrari CNC modelare 3d
+          Atelierul se afla in localitatea, Barai,strada ..nr.. jud. Cluj
+          Napoca. fondat in 2018 productie de serie mobila la comanda prelucrari
+          CNC modelare 3d
         </p>
       </div>
 

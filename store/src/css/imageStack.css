@@ -33,7 +33,7 @@
   transform: translateY(-50%);
   border: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: rgba(255, 255, 255, 0.781);
 }
 .next-button {
@@ -42,15 +42,22 @@
   transform: translateY(-50%);
   border: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: rgba(255, 255, 255, 0.781);
 }
 .prev-button {
   left: 10px;
 }
 
+.prev-button:hover {
+  color: rgb(223, 85, 85);
+}
+
 .next-button {
   right: 10px;
+}
+.next-button:hover {
+  color: rgb(223, 85, 85);
 }
 
 @media (max-width: 30rem) {
@@ -58,6 +65,22 @@
     position: relative;
     display: inline-block;
     max-width: 20rem;
-    min-height: 20rem;
+    min-height: 14rem;
+  }
+
+  .prev-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.781);
+  }
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.2rem;
   }
 }
