@@ -305,7 +305,7 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
     // Successful authentication, redirect to your app's success page
-    res.redirect("/success");
+    res.redirect("/");
   }
 );
 const PORT = process.env.PORT || 4000;
