@@ -279,9 +279,9 @@ passport.use(
   new GoogleStrategy(
     {
       clientID:
-        "820284951713-oqr7lrri9c742jv8ost3o4io6pg5lo89.apps.googleusercontent.com", // Replace with your Google OAuth client ID
-      clientSecret: "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", // Replace with your Google OAuth client secret
-      callbackURL: "https://fabricadserv.onrender.com/auth/google/callback", // Replace with your server URL
+        "820284951713-oqr7lrri9c742jv8ost3o4io6pg5lo89.apps.googleusercontent.com",
+      clientSecret: "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",
+      callbackURL: "https://fabricadserv.onrender.com/auth/google/callback",
     },
     (accessToken, refreshToken, profile, done) => {
       // Handle the user's profile and access tokens here
@@ -312,6 +312,10 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
     // Successful authentication, redirect to your app's success page
+
+    const userEmail = req.user.emails[0].value;
+
+    console.log("User email:", userEmail);
     res.redirect("https://fabricadserv.netlify.app");
   }
 );
