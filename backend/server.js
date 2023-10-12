@@ -311,10 +311,11 @@ app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
+    const user = req.session.passport.user;
+    res.json(user);
     // Successful authentication, store user in session
-    req.session.user = req.user;
+    // req.session.user = req.user;
     // res.redirect("https://fabricadserv.onrender.com/user");
-    res.redirect("https://fabricadserv.netlify.app");
   }
 );
 
