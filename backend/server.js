@@ -311,7 +311,8 @@ app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
-    // Successful authentication, redirect to your app's success page
+    // Successful authentication, store user in session
+    req.session.user = req.user;
     res.redirect("https://fabricadserv.onrender.com/user");
   }
 );
@@ -320,8 +321,6 @@ app.get("/user", (req, res) => {
   const user = req.session.user;
 
   if (user) {
-    res.redirect("https://fabricadserv.netlify.app");
-
     res.json(user);
   } else {
     res.status(401).json({ message: "Unauthorized" });
