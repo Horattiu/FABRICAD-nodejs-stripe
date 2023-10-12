@@ -59,14 +59,11 @@ import React, { useState, useEffect } from "react";
 
 function LoginButton() {
   const [user, setUser] = useState(null);
-
   useEffect(() => {
-    // Function to fetch user data from the server
     const fetchUserData = async () => {
       try {
-        const response = await fetch("https://localhost:400/user");
+        const response = await fetch("https://fabricadserv.onrender.com/user");
         if (response.status === 401) {
-          // User is not authenticated
           setUser(null);
         } else {
           const data = await response.json();
@@ -77,7 +74,6 @@ function LoginButton() {
       }
     };
 
-    // Call the fetchUserData function
     fetchUserData();
   }, []);
 
@@ -95,8 +91,8 @@ function LoginButton() {
     <div>
       {user ? (
         <div>
-          <h1>Welcome back, {user.email}!</h1>
-          <img src={user.profilePicture} alt="Profile" />
+          <h1>Welcome back, {user.name}!</h1>
+          <img src={user.picture} alt="Profile" />
           <button onClick={handleLogout}>Log Out</button>
         </div>
       ) : (
@@ -107,5 +103,4 @@ function LoginButton() {
     </div>
   );
 }
-
 export default LoginButton;

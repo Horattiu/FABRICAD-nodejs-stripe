@@ -312,8 +312,8 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
     // Successful authentication, store user in session
-    req.session.user = req.user;
-    res.redirect("https://fabricadserv.onrender.com/user");
+    // req.session.user = req.user;
+    res.redirect("/");
   }
 );
 
