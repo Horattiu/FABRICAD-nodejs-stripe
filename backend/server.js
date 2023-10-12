@@ -217,14 +217,21 @@ require("dotenv").config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const port = process.env.PORT || 4000;
+const session = require("express-session");
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
+app.use(
+  session({
+    secret: "dkjash874238473h",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
-// Configure CORS to allow requests from your Netlify frontend
 const corsOptions = {
-  origin: "https://fabricadserv.netlify.app", // Replace with your Netlify frontend URL
+  origin: "https://fabricadserv.netlify.app",
 };
 
 app.use(cors(corsOptions));
@@ -305,7 +312,7 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
     // Successful authentication, redirect to your app's success page
-    res.redirect("/");
+    res.redirect("/success");
   }
 );
 const PORT = process.env.PORT || 4000;
