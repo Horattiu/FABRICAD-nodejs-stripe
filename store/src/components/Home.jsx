@@ -4,16 +4,20 @@ import Store from "../pages/Store";
 import Footer from "./Footer";
 import ImageSlider from "./ImageSlider";
 import Services from "./Services";
-import LoginButton from "./LoginButton";
+import Catalogue from "./Catalogue";
+import Contact from "./Contact";
+// import LoginButton from "./LoginButton";
 
 function Home() {
   return (
     <>
       <Navbar />
-      <LoginButton />
+      {/* <LoginButton /> */}
       <ImageSlider />
-      <Store />
+      <Catalogue />
+      {/* <Store /> */}
       <Services />
+      <Contact />
       <Footer />
     </>
   );

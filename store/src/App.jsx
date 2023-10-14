@@ -9,12 +9,15 @@ import React from "react";
 import ProductDetails from "./components/ProductDetails";
 import About from "./components/About";
 import Home from "./components/Home";
+import CategoryProducts from "./components/CategoryProducts";
 
 function App() {
   return (
     <CartProvider>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/category/:category" element={<CategoryProducts />} />
+
         <Route path="work" element={<Work />} />
         <Route path="about" element={<About />} />
         <Route path="cancel" element={<Cancel />} />

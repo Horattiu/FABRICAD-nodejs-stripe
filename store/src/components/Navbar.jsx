@@ -326,7 +326,7 @@ function NavbarComponent() {
             </Link>
           </li>
           <div className="navbar-button" onClick={handleShow}>
-            <LuShoppingCart className="cart-icon" /> ({productsCount}) items
+            <LuShoppingCart className="cart-icon" /> ({productsCount}) cart
           </div>
         </ul>
         {mobile ? (

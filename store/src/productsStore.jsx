@@ -9,6 +9,7 @@
 const productsArray = [
   {
     id: "price_1NQZAYKeASpJmZ80DtPpaXwe",
+    category: "desks",
     title: "Coffee Table",
     price: 20.0,
     imageUrl: "/Gallery/pic1.jpg",
@@ -23,6 +24,7 @@ const productsArray = [
   },
   {
     id: "price_1NQZPCKeASpJmZ80zmUGBPRp",
+    category: "chairs",
     title: "chair",
     price: 10.0,
     imageUrl: "/Gallery/pic2.jpg",
@@ -37,6 +39,7 @@ const productsArray = [
   },
   {
     id: "price_1NQZSkKeASpJmZ80zUzbejyO",
+    category: "toys",
     title: "Toy",
     price: 32.0,
     imageUrl: "/Gallery/pic3.jpg",
@@ -47,6 +50,7 @@ const productsArray = [
   },
   {
     id: "price_1NxTG6KeASpJmZ80Kb7u8uOP",
+    category: "deks",
     title: "desk 2",
     price: 32.0,
     imageUrl: "/Gallery/pic3.jpg",
@@ -58,6 +62,7 @@ const productsArray = [
 
   {
     id: "price_1NyKUHKeASpJmZ80MyOVo46c",
+    category: "chairs",
     title: "chair 3",
     price: 200,
     imageUrl: "/Gallery/pic1.jpg",
