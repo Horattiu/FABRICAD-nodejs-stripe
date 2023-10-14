@@ -1,213 +1,3 @@
-// // sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x
-// // coffeE : price_1NQZAYKeASpJmZ80DtPpaXwe
-// // chair : price_1NQZPCKeASpJmZ80zmUGBPRp
-// // toy : price_1NQZSkKeASpJmZ80zUzbejyO
-
-// const express = require("express");
-// var cors = require("cors");
-
-// const app = express();
-// app.use(cors());
-// app.use(express.static("public"));
-// app.use(express.json());
-
-// // app.get("/stripe-payment-link", (req, res) => {
-// //   // Redirect the user to the Stripe payment link
-// //   res.redirect("https://buy.stripe.com/test_9AQaFS1Yo8tT59KaEE");
-// // });
-
-// app.get("/success", (req, res) => {
-//   res.send("Payment Successful!"); // Modify this to render the success page template or redirect as needed
-// });
-
-// app.get("/cancel", (req, res) => {
-//   res.send("Payment Cancelled!"); // Modify this to render the cancel page template or redirect as needed
-// });
-
-// app.post("/checkout", async (req, res) => {
-//   console.log(req.body);
-//   const items = req.body.items;
-//   let lineItems = [];
-//   items.forEach((item) => {
-//     lineItems.push({
-//       price: item.id,
-//       quantity: item.quantity,
-//     });
-//   });
-
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: lineItems,
-//     mode: "payment",
-//     success_url: "http://localhost:4000/success",
-//     cancel_url: "http://localhost:4000/cancel",
-//   });
-
-//   res.send(
-//     JSON.stringify({
-//       url: session.url,
-//     })
-//   );
-// });
-
-// app.listen(4000, () => console.log("Listening on port 4000!"));
-
-// const express = require("express");
-// var cors = require("cors");
-// require("dotenv").config();
-// // const stripe = require("stripe")(
-// //   "sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x"
-// // );
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-// const app = express();
-// app.use(cors());
-// app.use(express.static("public"));
-// app.use(express.json());
-
-// app.get("/success", (req, res) => {
-//   res.send("Payment Successful!");
-// });
-
-// app.get("/cancel", (req, res) => {
-//   res.send("Payment Cancelled!");
-// });
-
-// app.post("/checkout", async (req, res) => {
-//   const items = req.body.items;
-//   let lineItems = [];
-//   items.forEach((item) => {
-//     lineItems.push({
-//       price: item.id,
-//       quantity: item.quantity,
-//     });
-//   });
-
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: lineItems,
-//     mode: "payment",
-//     success_url: "http://localhost:4000/success",
-//     cancel_url: "http://localhost:4000/cancel",
-
-//     shipping_address_collection: {
-//       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
-//     },
-//   });
-
-//   res.send(
-//     JSON.stringify({
-//       url: session.url,
-//     })
-//   );
-// });
-
-// app.listen(4000, () => console.log("Listening on port 4000!"));
-
-// const express = require("express");
-// const cors = require("cors");
-// require("dotenv").config();
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-// const app = express();
-// app.use(cors());
-
-// app.use(express.static("public"));
-// app.use(express.json());
-
-// app.get("/success", (req, res) => {
-//   res.send("Payment Successful!");
-// });
-
-// app.get("/cancel", (req, res) => {
-//   res.send("Payment Cancelled!");
-// });
-
-// app.post("/checkout", async (req, res) => {
-//   const items = req.body.items;
-//   let lineItems = [];
-//   items.forEach((item) => {
-//     lineItems.push({
-//       price: item.id,
-//       quantity: item.quantity,
-//     });
-//   });
-
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: lineItems,
-//     mode: "payment",
-//     success_url: "https://fabricadserv.netlify.app/success",
-//     cancel_url: "https://fabricadserv.netlify.app/cancel",
-//     shipping_address_collection: {
-//       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
-//     },
-//   });
-
-//   res.send(
-//     JSON.stringify({
-//       url: session.url,
-//     })
-//   );
-// });
-
-// const PORT = process.env.PORT || 4000;
-
-// app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-// const express = require("express");
-// const cors = require("cors");
-// require("dotenv").config();
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-// const app = express();
-
-// // Configure CORS to allow requests from your Netlify frontend
-// const corsOptions = {
-//   origin: "https://fabricadserv.netlify.app", // Replace with your Netlify frontend URL
-// };
-
-// app.use(cors(corsOptions));
-
-// app.use(express.static("public"));
-// app.use(express.json());
-
-// app.get("/success", (req, res) => {
-//   res.send("Payment Successful!");
-// });
-
-// app.get("/cancel", (req, res) => {
-//   res.send("Payment Cancelled!");
-// });
-
-// app.post("/checkout", async (req, res) => {
-//   const items = req.body.items;
-//   let lineItems = [];
-//   items.forEach((item) => {
-//     lineItems.push({
-//       price: item.id,
-//       quantity: item.quantity,
-//     });
-//   });
-
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: lineItems,
-//     mode: "payment",
-//     success_url: "https://fabricadserv.onrender.com/success",
-//     cancel_url: "https://fabricadserv.onrender.com/cancel",
-//     shipping_address_collection: {
-//       allowed_countries: ["US", "CA", "GB", "DE", "RO"],
-//     },
-//   });
-
-//   res.send(
-//     JSON.stringify({
-//       url: session.url,
-//     })
-//   );
-// });
-
-// const PORT = process.env.PORT || 4000;
-
-// app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -220,6 +10,7 @@ const port = process.env.PORT || 4000;
 const session = require("express-session");
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const nodemailer = require("nodemailer");
 
 const app = express();
 app.use(
@@ -314,7 +105,6 @@ app.get(
     // const user = req.session.passport.user;
     // res.json(user);
     // Successful authentication, store user in session
-    // ////////////////////////////////
     req.session.user = req.user;
     res.redirect("https://fabricadserv.onrender.com/user");
   }
@@ -336,6 +126,37 @@ app.get("/logout", (req, res) => {
       console.error("Error clearing session:", err);
     }
     res.redirect("/");
+  });
+});
+
+// Create a Nodemailer transporter
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: "horatiu.oltn@gmail.com",
+    pass: "jeav txbf vrwh nbgx",
+  },
+});
+
+app.post("/send-email", (req, res) => {
+  const { name, email, message } = req.body;
+
+  const mailOptions = {
+    from: "your-email@gmail.com",
+    to: "horatiu.oltn@gmail.com", // Replace with the recipient's email address
+    subject: "Contact Form Submission",
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log("Error sending email:", error);
+      res.status(500).json({ success: false, error: "Failed to send email" });
+    } else {
+      console.log("Email sent:", info.response);
+      res.json({ success: true, message: "Email sent successfully" });
+    }
   });
 });
 
