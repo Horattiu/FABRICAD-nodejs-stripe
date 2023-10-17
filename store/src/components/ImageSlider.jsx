@@ -35,7 +35,7 @@ function ImageSlider() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       slideRight();
-    }, 5000);
+    }, 8000);
 
     return () => clearTimeout(timeoutId);
   }, [current]);
@@ -47,7 +47,7 @@ function ImageSlider() {
   };
 
   const scrollToNextComponent = () => {
-    const nextComponent = document.getElementById("title");
+    const nextComponent = document.getElementById("catalogue");
 
     if (nextComponent) {
       nextComponent.scrollIntoView({
@@ -60,8 +60,8 @@ function ImageSlider() {
     <>
       <div className="slider-text">
         <p>Digital fabrication</p>
-        <p>3D Modeling</p>
         <p>PlyWood work</p>
+        <p>3D Modeling</p>
         <div className="btn-icon-container">
           <button className="explore-button" onClick={scrollToNextComponent}>
             EXPLORE

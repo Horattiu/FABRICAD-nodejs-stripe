@@ -3,31 +3,22 @@
   /* border: 1px solid #ddd; */
   max-width: 18rem;
   border-radius: 8px;
-  /* background-color: #f5f5f5; */
   margin-bottom: 3rem;
 }
 
 .card-body {
   overflow: hidden;
+  text-align: center;
 }
 
-/* .product-card:hover {
-  transform: translateY(
-    -5px
-  ); 
-  transition: transform 0.3s ease; 
-} */
-
 .product-card:hover {
-  transform: translateY(
-    -9px
-  ); /* Adjust the value to control the amount of floating */
-  transition: transform 0.3s ease; /* Add a smooth transition for the hover-out state */
+  transform: translateY(-9px);
+  transition: transform 0.3s ease;
 }
 
 .product-card:not(:hover) {
-  transform: translateY(0); /* Return to the original position */
-  transition: transform 0.3s ease; /* Add a smooth transition for the hover-out state */
+  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 .title {
@@ -36,10 +27,6 @@
   color: #333;
   text-decoration: none;
 }
-/* 
-.card-title {
-  padding-left: 40;
-} */
 
 .product-card .card-price {
   font-size: 1.2rem;

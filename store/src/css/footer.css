@@ -7,7 +7,7 @@
 
 .background-box {
   background-color: rgb(247, 94, 94);
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
 }
 
 .footer-container {
@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  max-width: 64rem;
+  max-width: 60rem;
   margin: 0 auto;
   justify-items: center;
   align-items: baseline;
@@ -23,7 +23,7 @@
 
 .logo-footer {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.6rem;
 }
 
 .footer-box {
@@ -42,7 +42,8 @@
 }
 
 .footer-box h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .footer-box ul {
@@ -52,14 +53,30 @@
 .footer-container ul {
   cursor: pointer;
   list-style: none;
-  font-size: 3rem;
+  font-size: 2rem;
   justify-content: center;
+}
+
+.politics-container {
+  /* padding-top: 4rem; */
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  gap: 9rem;
+}
+.politics-container span {
+  cursor: pointer;
+  color: rgb(231, 231, 231);
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.politics-container span:hover {
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 /* Mobile and smaller screens */
 @media (max-width: 576px) {
   .footer-container {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     justify-content: center;
   }
 

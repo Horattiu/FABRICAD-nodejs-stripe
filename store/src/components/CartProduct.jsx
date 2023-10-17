@@ -6,6 +6,9 @@ import "../css/cartProduct.css";
 function CartProduct(props) {
   const cart = useContext(CartContext);
   const id = props.id;
+  const color = props.selectedColor;
+  console.log("Selected color in CartProduct:", color);
+
   const quantity = props.quantity;
   const productData = getProductData(id);
 
@@ -18,6 +21,9 @@ function CartProduct(props) {
         <div className="quantity-container">
           <p>{quantity} total</p>
         </div>
+        <div className="color-container">
+          <p>color:{color}</p>
+        </div>
         <div className="total-containerr">
           <p>${(quantity * productData.price).toFixed(2)}</p>
         </div>
@@ -27,7 +33,6 @@ function CartProduct(props) {
         >
           Remove
         </button>
-        {/* <hr></hr> */}
       </div>
     </>
   );

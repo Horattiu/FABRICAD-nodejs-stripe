@@ -27,32 +27,55 @@ export function CartProvider({ children }) {
     return quantity;
   }
 
-  function addOneToCart(id) {
-    const quantity = getProductQuantity(id);
+  // function addOneToCart(id, quantityToAdd) {
+  //   const quantity = getProductQuantity(id, quantity);
 
-    if (quantity === 0) {
-      // product is not in cart
+  //   if (quantity === 0) {
+  //     // product is not in cart
+  //     setCartProducts([
+  //       ...cartProducts,
+  //       {
+  //         id: id,
+  //         quantity: quantityToAdd,
+  //       },
+  //     ]);
+  //   } else {
+  //     // product is in cart
+  //     // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]    add to product id of 2
+  //     setCartProducts(
+  //       cartProducts.map(
+  //         (product) =>
+  //           product.id === id // if condition
+  //             ? { ...product, quantity: product.quantity + quantityToAdd } // if statement is true
+  //             : product // if statement is false
+  //       )
+  //     );
+  //   }
+  // }
+  function addOneToCart(id, quantityToAdd, selectedColor) {
+    const existingProduct = cartProducts.find((product) => product.id === id);
+
+    if (!existingProduct) {
+      // Product is not in the cart
       setCartProducts([
         ...cartProducts,
         {
           id: id,
-          quantity: 1,
+          quantity: quantityToAdd,
+          color: selectedColor,
         },
       ]);
     } else {
-      // product is in cart
-      // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]    add to product id of 2
+      // Product is already in the cart, update its quantity
       setCartProducts(
-        cartProducts.map(
-          (product) =>
-            product.id === id // if condition
-              ? { ...product, quantity: product.quantity + 1 } // if statement is true
-              : product // if statement is false
+        cartProducts.map((product) =>
+          product.id === id
+            ? { ...product, quantity: product.quantity + quantityToAdd }
+            : product
         )
       );
     }
   }
-
   function removeOneFromCart(id) {
     const quantity = getProductQuantity(id);
 

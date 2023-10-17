@@ -40,6 +40,12 @@ const Footer = () => (
         </p>
       </div>
     </footer>
+    <div className="politics-container">
+      <span>politica de confidentialitate</span>
+      <span>politica de rambursare</span>
+      <span>politica de expediere</span>
+      <span>aviz legal</span>
+    </div>
   </div>
 );
 

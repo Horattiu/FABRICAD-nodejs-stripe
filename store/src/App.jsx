@@ -1,15 +1,14 @@
 import { Routes, Route } from "react-router-dom";
+import { CartProvider } from "./CartContext";
 import "./App.css";
 import Cancel from "./pages/Cancel";
 import Success from "./pages/Success";
-import { CartProvider } from "./CartContext";
-
-import Work from "./components/Work";
 import React from "react";
 import ProductDetails from "./components/ProductDetails";
 import About from "./components/About";
 import Home from "./components/Home";
 import CategoryProducts from "./components/CategoryProducts";
+import Delivery from "./components/legal/Delivery";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/:category" element={<CategoryProducts />} />
 
-        <Route path="work" element={<Work />} />
         <Route path="about" element={<About />} />
         <Route path="cancel" element={<Cancel />} />
         <Route path="success" element={<Success />} />
@@ -26,7 +24,8 @@ function App() {
           path="/product-details/:productId"
           element={<ProductDetails element={<ProductDetails />} />}
         />
-        {/* <Route path="product-details" element={<ProductDetails />} /> */}
+
+        <Route path="delivery" element={<Delivery />} />
       </Routes>
     </CartProvider>
   );

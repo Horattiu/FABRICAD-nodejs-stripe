@@ -2,10 +2,7 @@
   display: flex;
   justify-content: center;
   gap: 8rem;
-  /* width: 100%; */
-  /* padding-left: 6rem;
-    padding-right: 6rem; */
-  /* background-color: #a4b2b3d2; */
+  
 }
 
 .landing-text {

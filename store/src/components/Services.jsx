@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/imageGallery.css";
+import "../css/services.css";
 import { useEffect } from "react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
@@ -12,11 +12,16 @@ function Services() {
 
   return (
     <div className="image-gallery">
-      <h2 className="gallery-title">Services</h2>
-    
+      <h2 className="gallery-title">Our services</h2>
+
       <div data-aos="fade-up" className="services">
         <div>
           <p>CNC cutting</p>
+          <img className="icon" src="/icons/cnc.png" alt="" />
+        </div>
+
+        <div>
+          <p>Laser engraving</p>
           <img className="icon" src="/icons/laser3.png" alt="" />
         </div>
         <div>

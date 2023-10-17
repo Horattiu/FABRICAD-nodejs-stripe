@@ -1,0 +1,35 @@
+.cart-modal {
+  position: fixed;
+  top: 12%;
+  right: 15rem;
+  /* transform: translate(-50%, -50%); */
+  background-color: #ffca37;
+  color: rgb(44, 44, 44);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 10rem;
+  text-align: center;
+}
+
+.cart-modal.show {
+  display: block;
+  opacity: 1;
+}
+.triangle {
+  position: absolute;
+  right: -0.94rem;
+  top: -6%;
+  /* width: 0;
+  height: 0; */
+  border-bottom: 30px solid #ffca37;
+  border-right: 30px solid transparent;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  transform: rotate(135deg);
+}
+.check-icon {
+  vertical-align: middle;
+  /* width: 2rem; */
+}

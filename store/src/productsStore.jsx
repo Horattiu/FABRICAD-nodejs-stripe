@@ -2,10 +2,6 @@
 // chair : price_1NQZPCKeASpJmZ80zmUGBPRp
 // toy : price_1NQZSkKeASpJmZ80zUzbejyO
 
-// import Model1 from "./components/Model1/scene2.gltf";
-// import Model from "./components/Model";
-
-// ProductsStore.jsx
 const productsArray = [
   {
     id: "price_1NQZAYKeASpJmZ80DtPpaXwe",
@@ -31,11 +27,7 @@ const productsArray = [
     model: "/model2/scene.gltf",
     texturePath: "",
     size: "80 x 200",
-    moreImages: [
-      "/Gallery/pic2.jpg",
-      "/Gallery/pic4.jpg",
-      // Add more image URLs here
-    ],
+    moreImages: ["/Gallery/pic2.jpg", "/Gallery/pic4.jpg"],
   },
   {
     id: "price_1NQZSkKeASpJmZ80zUzbejyO",
@@ -50,7 +42,7 @@ const productsArray = [
   },
   {
     id: "price_1NxTG6KeASpJmZ80Kb7u8uOP",
-    category: "deks",
+    category: "tables",
     title: "desk 2",
     price: 32.0,
     imageUrl: "/Gallery/pic3.jpg",
@@ -62,7 +54,7 @@ const productsArray = [
 
   {
     id: "price_1NyKUHKeASpJmZ80MyOVo46c",
-    category: "chairs",
+    category: "beds",
     title: "chair 3",
     price: 200,
     imageUrl: "/Gallery/pic1.jpg",

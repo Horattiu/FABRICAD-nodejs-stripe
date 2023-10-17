@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { productsArray } from "../ProductsStore";
 import ProductCard from "./ProductCard";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
+import "../css/category.css";
 
 function CategoryProducts() {
   const { category } = useParams();
@@ -16,13 +18,18 @@ function CategoryProducts() {
     <>
       <Navbar />
       <div>
-        <h2> {category} category</h2>
-        <div className="products">
-          {categoryProducts.map((product) => (
-            <ProductCard product={product} key={product.id} />
-          ))}
+        <div className="category-title">
+          <h2> {category} </h2>
+        </div>
+        <div className="category-container">
+          <div className="products">
+            {categoryProducts.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
+          </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

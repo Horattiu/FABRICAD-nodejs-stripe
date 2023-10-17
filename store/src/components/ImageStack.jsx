@@ -1,36 +1,3 @@
-// import React, { useState } from "react";
-
-// function ImageStack({ images }) {
-//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-//   const handleNextImage = () => {
-//     if (currentImageIndex < images.length - 1) {
-//       setCurrentImageIndex(currentImageIndex + 1);
-//     }
-//   };
-
-//   const handlePreviousImage = () => {
-//     if (currentImageIndex > 0) {
-//       setCurrentImageIndex(currentImageIndex - 1);
-//     }
-//   };
-
-//   const currentImage = images[currentImageIndex];
-
-//   return (
-//     <div className="image-stack-container">
-//       <img src={currentImage} alt="Product" className="product-image" />
-//       <button className="prev-button" onClick={handlePreviousImage}>
-//         &lt; {/* Left arrow symbol */}
-//       </button>
-//       <button className="next-button" onClick={handleNextImage}>
-//         &gt; {/* Right arrow symbol */}
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default ImageStack;
 
 import React, { useState } from "react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";

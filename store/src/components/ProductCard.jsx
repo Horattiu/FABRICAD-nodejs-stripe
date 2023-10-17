@@ -33,8 +33,6 @@ function ProductCard(props) {
 
         {/* <AddToCartButton productId={product.id} /> */}
         <Link to={`/product-details/${product.id}`}>
-          {" "}
-          {/* Add Details button with Link */}
           <button className="details-button">Details</button>
         </Link>
       </div>

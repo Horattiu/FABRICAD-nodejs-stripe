@@ -1,0 +1,60 @@
+.image-gallery {
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+  background-color: rgba(236, 235, 235, 0.87);
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  margin-bottom: 6rem;
+  font-weight: 500;
+}
+
+.services {
+  max-width: 60rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.icon {
+  padding-top: 1rem;
+  width: 5rem;
+  color: black;
+}
+
+.icon2 {
+}
+/* ///////////////////////////// */
+/* MEDIA Q */
+/* //////////////////////////// */
+
+/* Media query for smaller desktops (2 columns)
+@media (max-width: 48rem) {
+}
+
+/* Media query for mobiles (1 column) */
+/* @media (max-width: 30rem) {
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    font-size: 1.2rem;
+  }
+}  */
+
+@media (max-width: 48rem) {
+  .services {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 4rem; /* Adjust the gap as needed */
+    font-size: 1.2rem;
+    justify-items: center; /* Horizontally center items within the grid */
+    align-items: center; /* Vertically center items within the grid */
+  }
+}

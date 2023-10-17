@@ -1,41 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 import "../css/catalogue.css";
 
 function Category() {
+  useEffect(() => {
+    AOS.init({
+      duration: 550,
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
+      <h1 id="catalogue" className="catalogue-title">
+        Catalogue
+      </h1>
       <div className="page-container">
         <div className="categories-container">
-          <Link to="/category/chairs">
-            <div className="category">
-              <img src="Category/category.JPG" alt="" />
+          <Link to="/category/chairs" onClick={scrollToTop}>
+            <div data-aos="fade-up" className="category">
+              <img src="Category/scaun.jpg" alt="" />
               <div className="overlay">
                 <p className="name">chairs</p>
               </div>
             </div>
           </Link>
-          <Link to="/category/desks">
-            <div className="category">
-              <img src="Category/category2.JPG" alt="" />
+          <Link to="/category/desks" onClick={scrollToTop}>
+            <div data-aos="fade-up" className="category">
+              <img src="Category/masa.jpg" alt="" />
               <div className="overlay">
-                <p className="name">desks</p>
+                <p className="name">tables</p>
               </div>
             </div>
           </Link>
-          <Link to="Category/category3/toys">
-            <div className="category">
-              <img src="Category/category3.JPG" alt="" />
+          <Link to="/category/toys" onClick={scrollToTop}>
+            <div data-aos="fade-up" className="category">
+              <img src="Category/jucarie.JPG" alt="" />
               <div className="overlay">
-                <p className="name">Toys</p>
+                <p className="name">toys</p>
               </div>
             </div>
           </Link>
-          <Link to="Category/category3/toys">
-            <div className="category">
-              <img src="Category/category3.JPG" alt="" />
+          <Link to="category/beds" onClick={scrollToTop}>
+            <div data-aos="fade-up" className="category">
+              <img src="Category/pat.JPG" alt="" />
               <div className="overlay">
-                <p className="name">Toys</p>
+                <p className="name">beds</p>
               </div>
             </div>
           </Link>
