@@ -6,7 +6,9 @@ require("dotenv").config();
 // const passport = require("passport");
 const port = process.env.PORT || 4000;
 const session = require("express-session");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(
+  "sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x"
+);
 
 const app = express();
 
