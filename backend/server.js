@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 express = require("express");
-import cors from "cors";
+const cors = require("cors");
 require("dotenv").config();
 // const passport = require("passport");
 const port = process.env.PORT || 4000;
-import session from "express-session";
+const session = require("express-session");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // const stripe = require("stripe")(
