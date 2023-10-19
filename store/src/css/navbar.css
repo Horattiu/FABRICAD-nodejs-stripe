@@ -13,6 +13,7 @@
   z-index: 99;
 }
 .navbar-container {
+  align-items: center;
   display: flex;
   gap: 4rem;
   margin-bottom: 0;
@@ -31,6 +32,14 @@
   vertical-align: auto;
 }
 
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul li a::after {
+  /* color: #212529; */
+}
+
 ul {
   list-style-type: none;
 }
@@ -39,15 +48,28 @@ ul {
   font-weight: 600;
   color: black;
   cursor: pointer;
-  color: #212529;
   cursor: pointer;
   align-self: center;
   text-decoration: none;
 }
+
 .work:hover {
-  color: #535bf2;
+  color: #ff5353;
 }
 
+.contact a,
+.catalogue a {
+  text-align: center;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+
+.contact a:hover {
+  color: #ff5353;
+}
+.catalogue a:hover {
+  color: #ff5353;
+}
 .about {
   color: black;
   font-weight: 600;
@@ -179,6 +201,8 @@ ul {
 }
 
 .menu-close {
+  color: #212529;
+  cursor: pointer;
   border: none;
   background-color: rgba(245, 222, 179, 0);
   font-size: 4rem;

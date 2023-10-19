@@ -99,13 +99,13 @@ function NavbarComponent() {
           fabricad
         </Link>
         <ul className={mobile ? "nav-links-mobile" : "navbar-container"}>
-          <li className="work">
+          <li className="contact">
             <a href="#contact" onClick={scrollToContact}>
               CONTACT
             </a>
           </li>
 
-          <li className="work">
+          <li className="catalogue">
             <a href="#catalogue" onClick={scrollToCatalogue}>
               PRODUCTS
             </a>

@@ -23,8 +23,16 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    emailjs;
+    // .sendForm(emailServiceId, emailTemplateId, form.current, emailApiKey)
+
     emailjs
-      .sendForm(emailServiceId, emailTemplateId, form.current, emailApiKey)
+      .sendForm(
+        "service_npwzn1n",
+        "template_lb7ddhi",
+        form.current,
+        "DpwFpJCd-Pru5--Nt"
+      )
       .then(
         (result) => {
           console.log(result.text);
