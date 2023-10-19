@@ -1,15 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 express = require("express");
-const cors = require("cors");
+import cors from "cors";
 require("dotenv").config();
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+import { use, serializeUser, deserializeUser, authenticate } from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 const port = process.env.PORT || 4000;
-const session = require("express-session");
+import session from "express-session";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 const app = express();
 app.use(
@@ -65,7 +65,7 @@ app.post("/checkout", async (req, res) => {
 });
 
 // Configure Passport with Google OAuth
-passport.use(
+use(
   new GoogleStrategy(
     {
       clientID:
@@ -81,12 +81,12 @@ passport.use(
   )
 );
 
-passport.serializeUser((user, done) => {
+serializeUser((user, done) => {
   // Serialize the user's data and store it in the session
   done(null, user);
 });
 
-passport.deserializeUser((user, done) => {
+deserializeUser((user, done) => {
   // Deserialize the user's data from the session
   done(null, user);
 });
@@ -94,12 +94,12 @@ passport.deserializeUser((user, done) => {
 // Configure the Google OAuth routes
 app.get(
   "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+  authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/login" }),
+  authenticate("google", { failureRedirect: "/login" }),
   (req, res) => {
     // const user = req.session.passport.user;
     // res.json(user);
