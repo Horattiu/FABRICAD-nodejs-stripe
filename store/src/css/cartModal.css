@@ -33,3 +33,9 @@
   vertical-align: middle;
   /* width: 2rem; */
 }
+@media (max-width: 80rem) {
+  .cart-modal {
+    top: 12%;
+    right: 10%;
+  }
+}

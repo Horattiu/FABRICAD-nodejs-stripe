@@ -5,13 +5,14 @@ import { CartContext } from "../CartContext";
 import { Link } from "react-router-dom";
 import { LuShoppingCart } from "react-icons/lu";
 import { HiMenu } from "react-icons/hi";
+import { useRef } from "react";
 
 function NavbarComponent() {
+  const contactRef = useRef(null);
+  const catalogueRef = useRef(null);
   const [mobile, setMobile] = useState(false);
-
   const cart = useContext(CartContext);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -54,16 +55,42 @@ function NavbarComponent() {
     };
   }, [show]);
 
-  // const scrollToSection = (sectionId) => {
-  //   const targetSection = document.getElementById(sectionId);
+  // NUMA' EU SI DUMNEZEU STIU CE AM FACUT AICI DEGEABA INCERCI SA ITI DAI SEAMA
 
-  //   if (targetSection) {
-  //     window.scrollTo({
-  //       top: targetSection.offsetTop,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      // Verifică dacă secțiunea Contact există în DOM
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+      setMobile(false);
+    } else {
+      window.location = "/#contact";
+    }
+  };
+  const scrollToContactOnLoad = () => {
+    if (window.location.hash === "#contact") {
+      scrollToContact();
+    }
+  };
+
+  useEffect(scrollToContactOnLoad, []);
+
+  const scrollToCatalogue = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+      setMobile(false);
+    } else {
+      window.location = "/#catalogue";
+    }
+  };
+  const scrollToCatalogueOnLoad = () => {
+    if (window.location.hash === "#catalogue") {
+      scrollToCatalogue();
+    }
+  };
+
+  useEffect(scrollToCatalogueOnLoad, []);
+
+  ////////////////////////////////////////////////////
 
   return (
     <>
@@ -73,12 +100,16 @@ function NavbarComponent() {
         </Link>
         <ul className={mobile ? "nav-links-mobile" : "navbar-container"}>
           <li className="work">
-            <span>CONTACT</span>
-          </li>
-          <li className="work">
-            <span>PRODUCTS</span>
+            <a href="#contact" onClick={scrollToContact}>
+              CONTACT
+            </a>
           </li>
 
+          <li className="work">
+            <a href="#catalogue" onClick={scrollToCatalogue}>
+              PRODUCTS
+            </a>
+          </li>
           <li className="about" onClick={() => setMobile(false)}>
             <Link to="/about" className="work">
               ABOUT

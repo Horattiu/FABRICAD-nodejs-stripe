@@ -191,20 +191,7 @@ ul {
   background-color: #8f8f8f56;
 }
 
-/* .close-button {
-    display: none;
-    position: absolute;
-    top: 10%;
-    right: 20%;
-    font-size: 3rem;
-    color: #7a7a7a;
-  } */
-
-/* .close-button.visible {
-    display: inline-block;
-  } */
-
-@media (max-width: 768px) {
+@media (max-width: 74rem) {
   .navbar {
     padding-left: 1.4rem;
     padding-right: 1.4rem;

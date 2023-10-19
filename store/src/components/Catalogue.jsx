@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 import "../css/catalogue.css";
 
@@ -11,12 +12,20 @@ function Category() {
     });
   }, []);
 
+  const catalogueRef = useRef(null);
+
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  const scrollToCatalogue = () => {
+    if (window.location.hash === "#catalogue") {
+      window.scrollTo(0, 0);
+    }
+  };
   return (
     <>
-      <h1 id="catalogue" className="catalogue-title">
+      <h1 id="catalogue" ref={catalogueRef} className="catalogue-title">
         Catalogue
       </h1>
       <div className="page-container">

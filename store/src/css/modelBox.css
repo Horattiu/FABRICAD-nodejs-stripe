@@ -1,6 +1,7 @@
 .model-container {
   cursor: pointer;
-  background-color: rgb(240, 232, 221);
+  background-color: rgb(230, 230, 230);
+  /* border: 1px solid rgb(201, 201, 201); */
   width: 100%;
   max-width: 36rem;
   height: 30rem;

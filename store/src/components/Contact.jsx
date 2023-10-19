@@ -2,9 +2,14 @@ import React, { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../css/contact.css";
 import { AiFillCheckCircle } from "react-icons/ai";
-require("dotenv").config();
+import dotenv from "dotenv";
 
 function Contact() {
+  const emailServiceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+  const emailTemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+  const emailApiKey = import.meta.env.VITE_EMAIL_API_KEY;
+  const contactRef = useRef(null);
+
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
@@ -19,12 +24,7 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        process.env.EMAIL_SERVICE_ID,
-        process.env.EMAIL_TEMPLATE_ID,
-        form.current,
-        process.env.EMAIL_API_KEY
-      )
+      .sendForm(emailServiceId, emailTemplateId, form.current, emailApiKey)
       .then(
         (result) => {
           console.log(result.text);
@@ -39,7 +39,7 @@ function Contact() {
 
   return (
     <>
-      <div id="contact" className="contact-container">
+      <div id="contact" ref={contactRef} className="contact-container">
         {isSubmitted ? (
           <div className="thank-you-message">
             <AiFillCheckCircle className="check-icon" />
