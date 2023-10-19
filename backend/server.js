@@ -1,17 +1,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-// const passport = require("passport");
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const port = process.env.PORT || 4000;
 const session = require("express-session");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-// const stripe = require("stripe")(
-//   sk_test_51NQRqrKeASpJmZ80u3e3HFZu3wvjH9kPyTIJyaXWEOJj4VdE0W2U8rKGUn3PWhUMtSWAAJGiAkhu62M2VaaXknmZ00K54CuD0x
-// );
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const nodemailer = require("nodemailer");
 
 const app = express();
+app.use(
+  session({
+    secret: "dkjash874238473h",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 const corsOptions = {
   origin: "https://fabricadserv.netlify.app",
@@ -56,6 +63,70 @@ app.post("/checkout", async (req, res) => {
     })
   );
 });
+
+// Configure Passport with Google OAuth
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID:
+        "8202849517t3o4io6pg5lo89.apps.googleusercontent.com",
+      clientSecret: "GOCSPX-",
+      callbackURL: "https://fabricadserv.onrender.com/auth/google/callback",
+    },
+    (accessToken, refreshToken, profile, done) => {
+      // Handle the user's profile and access tokens here
+      // You can store the user data and tokens in your server's session or database
+      return done(null, profile);
+    }
+  )
+);
+
+passport.serializeUser((user, done) => {
+  // Serialize the user's data and store it in the session
+  done(null, user);
+});
+
+passport.deserializeUser((user, done) => {
+  // Deserialize the user's data from the session
+  done(null, user);
+});
+
+// Configure the Google OAuth routes
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  (req, res) => {
+    // const user = req.session.passport.user;
+    // res.json(user);
+    // Successful authentication, store user in session
+    req.session.user = req.user;
+    res.redirect("https://fabricadserv.onrender.com/user");
+  }
+);
+
+// app.get("/user", (req, res) => {
+//   const user = req.session.user;
+
+//   if (user) {
+//     res.json(user);
+//   } else {
+//     res.status(401).json({ message: "Unauthorized" });
+//   }
+// });
+
+// app.get("/logout", (req, res) => {
+//   req.session.destroy((err) => {
+//     if (err) {
+//       console.error("Error clearing session:", err);
+//     }
+//     res.redirect("/");
+//   });
+// });
 
 const PORT = process.env.PORT || 4000;
 
